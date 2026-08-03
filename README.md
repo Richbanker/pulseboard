@@ -1,51 +1,60 @@
-<h1 align="center">
-  🧠 PulseBoard
-</h1>
+# PulseBoard
 
-<p align="center">
-  <b>Real-time Dashboard with WebSocket, Zustand and Recharts</b><br />
-  <sub>Powered by React, Tailwind, and a mock WebSocket server</sub>
-</p>
+Демонстрационная панель мониторинга данных в реальном времени на React и TypeScript. Проект показывает работу с потоковыми обновлениями, состоянием приложения и интерактивной визуализацией.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/status-live-brightgreen?style=flat-square" />
-  <img src="https://img.shields.io/badge/frontend-react-blue?style=flat-square&logo=react" />
-  <img src="https://img.shields.io/badge/state-zustand-orange?style=flat-square" />
-</p>
+## Возможности
 
----
+- обновление данных через имитацию WebSocket-соединения;
+- интерактивные графики на Recharts;
+- хранение состояния через Zustand;
+- отображение статуса подключения;
+- адаптивный интерфейс;
+- отдельная конфигурация сборки Webpack.
 
-## ⚡ Preview
+## Стек
 
-![PulseBoard Screenshot](./public/demo.png) <!-- сюда можешь вставить скрин или гиф -->
+- React 19;
+- TypeScript;
+- Zustand;
+- Recharts;
+- Tailwind CSS;
+- mock-socket;
+- Webpack.
 
----
+## Архитектура
 
-## 🚀 Features
+Приложение разделяет:
 
-- 📈 Live updating chart via WebSocket
-- 🧠 Zustand for state management
-- 🌐 Mocked WebSocket server (`mock-socket`)
-- 💅 Responsive UI with TailwindCSS
-- 🟢 Connection status indicator
+- слой получения событий;
+- глобальное состояние;
+- компоненты визуализации;
+- отображение состояния соединения.
 
----
+`mock-socket` используется для воспроизводимого локального сценария без внешнего backend-сервиса.
 
-## 🛠 Stack
-
-- React + TypeScript
-- Zustand
-- Recharts
-- TailwindCSS
-- mock-socket
-- Webpack
-
----
-
-## 🧪 Local Setup
+## Локальный запуск
 
 ```bash
 git clone https://github.com/Richbanker/pulseboard.git
 cd pulseboard
 npm install
 npm run start
+```
+
+## Сборка
+
+```bash
+npm run build
+```
+
+## Что демонстрирует проект
+
+- работу с обновлениями данных в реальном времени;
+- проектирование dashboard-интерфейсов;
+- интеграцию React с библиотекой графиков;
+- управление состоянием без Redux;
+- ручную настройку frontend-сборки.
+
+## Статус
+
+Проект используется как портфолио-пример интерфейса мониторинга. Следующее улучшение — добавить автоматические тесты и подключение к реальному WebSocket API.
