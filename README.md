@@ -1,51 +1,72 @@
-<h1 align="center">
-  🧠 PulseBoard
-</h1>
+# PulseBoard
 
-<p align="center">
-  <b>Real-time Dashboard with WebSocket, Zustand and Recharts</b><br />
-  <sub>Powered by React, Tailwind, and a mock WebSocket server</sub>
-</p>
+Dashboard на React и TypeScript с имитацией потока данных через mock WebSocket. Проект показывает управление состоянием, обновление интерфейса по событиям и интерактивную визуализацию метрик.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/status-live-brightgreen?style=flat-square" />
-  <img src="https://img.shields.io/badge/frontend-react-blue?style=flat-square&logo=react" />
-  <img src="https://img.shields.io/badge/state-zustand-orange?style=flat-square" />
-</p>
+## Демо
 
----
+[pulseboard-delta.vercel.app](https://pulseboard-delta.vercel.app/)
 
-## ⚡ Preview
+## Возможности
 
-![PulseBoard Screenshot](./public/demo.png) <!-- сюда можешь вставить скрин или гиф -->
+- обновление данных через имитацию WebSocket-соединения;
+- интерактивные графики на Recharts;
+- хранение состояния через Zustand;
+- отображение статуса подключения;
+- адаптивный интерфейс;
+- отдельная конфигурация сборки Webpack.
 
----
+## Стек
 
-## 🚀 Features
+- React 19;
+- TypeScript;
+- Zustand;
+- Recharts;
+- Tailwind CSS;
+- mock-socket;
+- Webpack.
 
-- 📈 Live updating chart via WebSocket
-- 🧠 Zustand for state management
-- 🌐 Mocked WebSocket server (`mock-socket`)
-- 💅 Responsive UI with TailwindCSS
-- 🟢 Connection status indicator
+## Архитектура
 
----
+Приложение разделяет:
 
-## 🛠 Stack
+- слой получения событий;
+- глобальное состояние;
+- компоненты визуализации;
+- отображение состояния соединения.
 
-- React + TypeScript
-- Zustand
-- Recharts
-- TailwindCSS
-- mock-socket
-- Webpack
+`mock-socket` используется для воспроизводимого локального сценария без внешнего backend-сервиса.
 
----
-
-## 🧪 Local Setup
+## Локальный запуск
 
 ```bash
 git clone https://github.com/Richbanker/pulseboard.git
 cd pulseboard
 npm install
 npm run start
+```
+
+## Сборка
+
+```bash
+npm run build
+```
+
+## Что демонстрирует проект
+
+- обработку имитируемого потока событий через `mock-socket`;
+- проектирование dashboard-интерфейсов;
+- интеграцию React с библиотекой графиков;
+- управление состоянием без Redux;
+- ручную настройку frontend-сборки.
+
+## Проверки
+
+```bash
+npm run build
+```
+
+Автоматических тестов в текущей версии нет: существующая команда `npm test` является заглушкой и завершается с ошибкой.
+
+## Статус
+
+Проект используется как портфолио-пример интерфейса мониторинга. Следующее улучшение — добавить автоматические тесты и подключение к реальному WebSocket API.
