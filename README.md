@@ -2,6 +2,11 @@
   🧠 PulseBoard
 </h1>
 
+[![Просмотры README](https://vbr.nathanchung.dev/badge?page_id=Richbanker.pulseboard&text=README_Views)](https://github.com/Richbanker/pulseboard)
+
+[Открыть проект](https://rebrand.ly/richbanker-pulseboard)
+
+
 <p align="center">
   <b>Real-time Dashboard with WebSocket, Zustand and Recharts</b><br />
   <sub>Powered by React, Tailwind, and a mock WebSocket server</sub>
