@@ -4,7 +4,7 @@
 
 [![Просмотры README](https://vbr.nathanchung.dev/badge?page_id=Richbanker.pulseboard&text=README_Views)](https://github.com/Richbanker/pulseboard)
 
-[Открыть проект](https://rebrand.ly/richbanker-pulseboard)
+[Открыть публичное демо](https://pulseboard-delta.vercel.app/) · [Репозиторий со счётчиком переходов](https://rebrand.ly/richbanker-pulseboard)
 
 
 <p align="center">
