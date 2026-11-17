@@ -12,21 +12,23 @@ export const useWebSocket = (url: string) => {
     ws.onerror = () => setIsConnected(false);
 
     ws.onmessage = (event) => {
+      let parsed: unknown;
       try {
-        const parsed: unknown = JSON.parse(event.data);
-        if (
-          typeof parsed === 'object' && parsed !== null &&
-          'timestamp' in parsed && 'value' in parsed &&
-          typeof parsed.timestamp === 'number' && Number.isFinite(parsed.timestamp) &&
-          typeof parsed.value === 'number' && Number.isFinite(parsed.value)
-        ) {
-          useWebSocketStore.getState().addData({
-            timestamp: parsed.timestamp,
-            value: parsed.value,
-          });
-        }
+        parsed = JSON.parse(event.data);
       } catch {
-        // Ignore malformed frames; keep the connection alive for subsequent data.
+        // Ignore malformed JSON without interrupting subsequent messages.
+        return;
+      }
+      if (
+        typeof parsed === 'object' && parsed !== null &&
+        'timestamp' in parsed && 'value' in parsed &&
+        typeof parsed.timestamp === 'number' && Number.isFinite(parsed.timestamp) &&
+        typeof parsed.value === 'number' && Number.isFinite(parsed.value)
+      ) {
+        useWebSocketStore.getState().addData({
+          timestamp: parsed.timestamp,
+          value: parsed.value,
+        });
       }
     };
 
