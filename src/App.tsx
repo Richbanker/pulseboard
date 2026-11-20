@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
 import { useWebSocketStore } from './store/useWebSocketStore';
 import { useWebSocket } from './hooks/useWebSocket';
 
@@ -22,7 +22,8 @@ const App = () => {
 
       <h1 className="text-2xl font-bold mb-4">📈 Live PulseBoard</h1>
 
-      <LineChart width={800} height={400} data={data}>
+      <ResponsiveContainer width="100%" height={400}>
+        <LineChart data={data}>
         <XAxis
           dataKey="timestamp"
           tickFormatter={(ts) => new Date(ts).toLocaleTimeString()}
@@ -30,7 +31,8 @@ const App = () => {
         <YAxis />
         <Tooltip />
         <Line type="monotone" dataKey="value" stroke="#38bdf8" dot={false} />
-      </LineChart>
+        </LineChart>
+      </ResponsiveContainer>
     </div>
   );
 };
